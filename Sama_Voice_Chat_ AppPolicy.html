@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sama Voice Chat App Policy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 40px;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+        
+        .download-section {
+            background: white;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 20px 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.4em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255,0,0,0.5);
+            display: inline-block;
+            animation: pulse 2s infinite;
+            border: 3px solid white;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 8px 25px rgba(255,0,0,0.5);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 12px 35px rgba(255,0,0,0.7);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 8px 25px rgba(255,0,0,0.5);
+            }
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 15px 40px rgba(255,0,0,0.8);
+            animation: none;
+        }
+        
+        .section {
+            background: white;
+            margin-top: 2px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .section:last-child {
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .section-title {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #f5576c;
+            display: inline-block;
+        }
+        
+        .agency-link {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255,0,0,0.5);
+            display: inline-block;
+            margin: 20px 0;
+            animation: glow 2s infinite;
+            border: 3px solid white;
+        }
+        
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 8px 25px rgba(255,0,0,0.5);
+            }
+            50% {
+                box-shadow: 0 8px 35px rgba(255,0,0,0.8), 0 0 20px rgba(255,0,0,0.5);
+            }
+        }
+        
+        .agency-link:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255,0,0,0.8);
+            animation: none;
+        }
+        
+        .commission-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .commission-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            font-size: 1.2em;
+        }
+        
+        .commission-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 1.1em;
+        }
+        
+        .commission-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .commission-table tr:hover {
+            background-color: #f0e6ff;
+            transition: all 0.3s ease;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .highlight-box h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        
+        .highlight-box p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .benefit-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        
+        .benefit-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .host-link {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255,0,0,0.5);
+            display: inline-block;
+            margin: 20px 10px 20px 0;
+            animation: glow 2s infinite;
+            border: 3px solid white;
+        }
+        
+        .host-link:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255,0,0,0.8);
+            animation: none;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎙️ Sama Voice Chat App</h1>
+            <p>Complete Policy & Benefits Guide</p>
+        </div>
+        
+        <div class="download-section">
+            <a href="https://in.samavoices.com/share/download?label=NTYzNDM0ODk4XzA%3D" class="download-btn" target="_blank">
+                📱 Download Sama App
+            </a>
+        </div>
+        
+        <!-- Agency Policy Section -->
+        <div class="section">
+            <h2 class="section-title">🏢 Agency Policy</h2>
+            <a href="https://in.samavoices.com/share/invite-agency?label=NTYzNDM0ODk4XzM%3D" class="agency-link" target="_blank">
+                🔗 Click Here for Agency Registration
+            </a>
+            
+            <h3 style="color: #667eea; margin-top: 30px; font-size: 1.5em;">Commission Structure</h3>
+            <table class="commission-table">
+                <thead>
+                    <tr>
+                        <th>Commission Rate</th>
+                        <th>Received Beans</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>5%</strong></td><td>48K Beans</td></tr>
+                    <tr><td><strong>8%</strong></td><td>300K Beans</td></tr>
+                    <tr><td><strong>10%</strong></td><td>600K Beans</td></tr>
+                    <tr><td><strong>12%</strong></td><td>1.8M Beans</td></tr>
+                    <tr><td><strong>15%</strong></td><td>3M Beans</td></tr>
+                    <tr><td><strong>16%</strong></td><td>4.2M Beans</td></tr>
+                    <tr><td><strong>17%</strong></td><td>6M Beans</td></tr>
+                    <tr><td><strong>19%</strong></td><td>18M Beans</td></tr>
+                    <tr><td><strong>20%</strong></td><td>30M Beans</td></tr>
+                </tbody>
+            </table>
+            
+            <h3 style="color: #667eea; margin-top: 30px; font-size: 1.5em;">Agency Benefits</h3>
+            <div class="highlight-box">
+                <h3>✨ Agency Benefits</h3>
+                <p style="font-size: 1.1em; line-height: 2;">
+                    💰 <strong>Weekly Commission Release</strong> - Agency commission released every week<br>
+                    🏦 <strong>Self-Withdrawal Available</strong> - Withdraw funds yourself anytime<br>
+                    💵 <strong>Minimum 120K Beans</strong> - Minimum withdrawal amount<br>
+                    📞 <strong>Instant Support via Instagram</strong> - Quick support available
+                </p>
+            </div>
+        </div>
+        
+        <!-- Host Policy Section -->
+        <div class="section">
+            <h2 class="section-title">🎤 Host Policy</h2>
+            <a href="https://in.samavoices.com/share/download?label=NTc1MTA1MzkzXzE%3D" class="host-link" target="_blank">
+                🔗 Click Here for Hosting Registration
+            </a>
+            
+            <div class="highlight-box">
+                <h3>💎 70% Beans Share</h3>
+                <p>All hosts receive a <strong>70% beans share</strong> on every coins gift!</p>
+            </div>
+            
+            <h3 style="color: #667eea; margin-top: 30px; font-size: 1.5em;">Extra Advantages</h3>
+            <div class="benefits">
+                <div class="benefit-card">
+                    <h3>🎯 No Level Targets</h3>
+                    <p>Work at your own pace</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>⏰ No Timing Requirements</h3>
+                    <p>Complete flexibility in hours</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>🆓 Full Freedom</h3>
+                    <p>Work whenever you want</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Coin Seller Policy Section -->
+        <div class="section">
+            <h2 class="section-title">💰 Coin Seller Policy</h2>
+            
+            <div class="highlight-box">
+                <h3>🚀 Coin Seller Activation</h3>
+                <p><strong>Just 200 USD deposit</strong> and your seller account gets fully enabled!</p>
+                <p style="margin-top: 15px;">Simple, fast, and profitable.</p>
+            </div>
+            
+            <div class="highlight-box" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <h3>💵 Coins Rate</h3>
+                <p style="font-size: 2em; font-weight: bold;">1 USD = 9,500 Coins</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
